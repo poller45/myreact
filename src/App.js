@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Student from "./components/Students";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+	return (
+		<div className="App">
+			<table className="students" border="0">
+				<caption>React students</caption>
+				<tr>
+					<th>
+						<img
+							alt=""
+							src="https://cdn-icons-png.flaticon.com/512/2665/2665715.png"
+							width="30"
+							height="30"
+						></img>
+					</th>
+					<th>Студент</th>
+					<th>Домашки/балы</th>
+					<th>
+						<img
+							alt=""
+							src="https://cdn-icons-png.flaticon.com/512/15/15643.png"
+							width="30"
+							height="30"
+						></img>
+					</th>
+				</tr>
+				{props.users.map((item, index) => {
+					return (
+						<Student
+							name={item.name}
+							img={item.img}
+							homeworks={item.homeworks}
+						/>
+					);
+				})}
+			</table>
+		</div>
+	);
 }
 
 export default App;
