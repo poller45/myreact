@@ -1,5 +1,4 @@
 import Student from "./components/Students";
-import { USERS } from "./Data";
 
 function App({ USERS }) {
 	return (
