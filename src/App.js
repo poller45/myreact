@@ -1,9 +1,9 @@
-import "./App.css";
 import Student from "./components/Students";
+import { USERS } from "./Data";
 
-function App(props) {
+function App({ USERS }) {
 	return (
-		<div className="App">
+		<div className="app">
 			<table className="students" border="0">
 				<caption>React students</caption>
 				<tr>
@@ -26,15 +26,19 @@ function App(props) {
 						></img>
 					</th>
 				</tr>
-				{props.users.map((item, index) => {
-					return (
-						<Student
-							name={item.name}
-							img={item.img}
-							homeworks={item.homeworks}
-						/>
-					);
-				})}
+				{USERS.sort(
+					(a, b) =>
+						b.homeworks.reduce((a, b) => a + b) -
+						a.homeworks.reduce((a, b) => a + b)
+				).map((item, i) => (
+					<Student
+						index={i + 1}
+						name={item.name}
+						img={item.img}
+						homeworks={item.homeworks}
+						homeworksDone={item.homeworksDone}
+					/>
+				))}
 			</table>
 		</div>
 	);

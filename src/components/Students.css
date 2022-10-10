@@ -1,22 +1,41 @@
+body {
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+         sans-serif;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+.students{
+   margin: 10px 0;
+   padding: 10px;
+   }
+
 .avatar {
    margin: 0;
    width: 50px;
    height: 50px;
-   border-radius: 80%;
-   align: left;
-
+   border-radius: 50%;
+   margin-right: 20px;
+   vertical-align: middle;
 }
 
 .mark {
    width: 30px;
    height: 30px;
-
 }
 
 .name {
-   text-decoration: solid;
-   align: center;
+   margin-right: 20px;
+   vertical-align:middle;
+   text-align: left;
 }
-.students{
-   
+caption{
+   font-weight: bold;
+}
+.homework{
+ text-align: center;
 }
